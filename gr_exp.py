@@ -1,20 +1,15 @@
 import great_expectations as gx
 from great_expectations.checkpoint import Checkpoint
-
-DATASOURCE_NAME = "MySQL"
-HOST = "localhost"
-PORT = "3306"
-USERNAME = "root"
-PASSWORD = "Password"
-DATABASE = "AdventureWorks2012"
-ADDRESS_TABLE_NAME = "Address"
+from variables import DATASOURCE_NAME, HOST, PORT, USERNAME, PASSWORD, DATABASE, ADDRESS_TABLE_NAME
 
 context = gx.get_context()
 
 CONNECTION_STRING = f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
+
 # context.delete_datasource(
 #     datasource_name="mysql_datasource9"
 # )
+
 mysql_datasource = context.sources.add_sql(
     name="mysql_datasource9", connection_string=CONNECTION_STRING
 )
@@ -76,4 +71,3 @@ context.open_data_docs()
 # context.delete_datasource(
 #     datasource_name="mysql_datasource9"
 # )
-

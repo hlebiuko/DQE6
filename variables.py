@@ -1,0 +1,7 @@
+DATASOURCE_NAME = "MySQL"
+HOST = "localhost"
+PORT = "3306"
+USERNAME = "root"
+PASSWORD = "Password"
+DATABASE = "AdventureWorks2012"
+ADDRESS_TABLE_NAME = "Address"
